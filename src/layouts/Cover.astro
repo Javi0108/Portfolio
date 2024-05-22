@@ -1,0 +1,43 @@
+---
+import Image from "../components/ProfileImage.astro";
+---
+
+<section class="bg-dark">
+    <div class="content">
+        <div class="titles">
+            <span>Hello, I'm <strong>Javier</strong>, a</span>
+            <span><strong>Software developer</strong></span>
+        </div>
+        <Image />
+    </div>
+</section>
+
+<style>
+    section {
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+
+    }
+    .titles {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: xx-large;
+        align-content: center;
+        justify-content: center;
+    }
+
+    strong {
+        color: #609fff;
+    }
+</style>
