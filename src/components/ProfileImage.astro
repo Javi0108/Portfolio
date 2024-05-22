@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets'
+import defaultimg from '../assets/defaultimg.webp'
+---
+
 <section>
-    <img src="https://imgs.search.brave.com/0UioT8vVlmce4h5d39DNGRcGglPmkMHqhNkRhbp0i6c/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA0LzYzLzY2Lzcw/LzM2MF9GXzQ2MzY2/NzAyNl9CNkw4SUd5/MmNnR1lkWU9rTjho/QkU1NUIxenBjVnZE/Yy5qcGc" alt="Imagen de mi persona" class="rounded-circle">
+    <Image src={defaultimg} alt="Imagen de mi persona" style={'border-radius: 50%; width: 400px; height: 400px;'}>
 </section>

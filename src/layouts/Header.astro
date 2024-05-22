@@ -1,37 +1,36 @@
 <section>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul
+          class="navbar-nav d-flex flex-row justify-content-center align-content-center"
+        >
           <li class="nav-item">
             <a class="nav-link active" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About me</a>
+            <a class="nav-link" href="#About-me">About me</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Projects</a>
           </li>
-          <li>
-            <form class="d-flex">
-              <input
-                class="form-control me-2 slide-in"
-                id="searchInput"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button type="button" id="searchButton" class="btn btn-primary"
+          <form>
+            <li class="searchInput" id="searchInput">
+              <input type="search" placeholder="Search" aria-label="Search" />
+            </li>
+            <li>
+              <button type="button" id="searchButton" class="searchButton"
                 ><i class="bi bi-search"></i></button
               >
-            </form>
-          </li>
+            </li>
+          </form>
           <li class="nav-item">
             <button
               type="button"
               id="cvButton"
-              class="nav-link btn btn-primary text-white mx-2"
-              ><i class="bi bi-file-earmark-person"></i></button
+              class="cvButton nav-link mx-2" 
+              ><i class="bi bi-file-earmark-person"></i>
+              </button
             >
           </li>
         </ul>
@@ -43,33 +42,77 @@
 <script is:inline>
   const button = document.getElementById("searchButton");
   const input = document.getElementById("searchInput");
+  input.style.display = "none";
 
   button.addEventListener("click", () => {
-    input.classList.toggle("showing");
+    if (input.style.display == "block") {
+      input.style.display = "none";
+    } else if (input.style.display == "none") {
+      input.style.display = "block";
+    }
   });
+
+  document.getElementById('cvButton').addEventListener('click', function() {
+      const url = '../../CV_English.pdf';
+      const enlace = document.createElement('a');
+      enlace.href = url;
+      enlace.download = 'CV_English.pdf';
+      enlace.click();
+    });
 </script>
 
 <style>
+
+  section {
+		background-color: #13151a;
+    position: fixed;
+    width: 100%;
+  }
+
   .navbar-collapse {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
+    justify-content: center;
   }
 
   form {
     margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
-  .searchInput {
-    transition: all 0.5s ease;
-    visibility: hidden;
-    position: relative;
-    left: -2px;
+  #searchButton {
+    border: 1px solid white;
+    background-color: rgb(0, 0, 0, 0);
+    color: white;
+    border-color: transparent;
+    transition: all .3s ease;
+    /* margin-left: 10px; */
   }
 
-  .showing {
-    visibility: visible;
-    left: 0;
+  #searchButton:hover {
+    color: rgb(187, 187, 187);
+  }
+
+  #searchInput {
+    border-radius: 10px;
+  }
+
+  #cvButton {
+    border: 1px solid white;
+    background-color: rgb(0, 0, 0, 0);
+    color: white;
+    border-color: transparent;
+    transition: all .3s ease;
+  }
+
+  #cvButton:hover {
+    color: rgb(187, 187, 187);
   }
 </style>
