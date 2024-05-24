@@ -3,41 +3,47 @@ import Image from "../components/ProfileImage.astro";
 ---
 
 <section>
-    <div class="content">
-        <div class="titles">
-            <span>Hello, I'm <strong>Javier</strong>, a</span>
-            <span><strong>Software developer</strong></span>
-        </div>
-        <Image />
+  <div class="content">
+    <div class="content-header d-flex flex-row gap-5">
+      <div class="titles">
+        <span>Hello, I'm <strong>Javier</strong>, a</span>
+        <span><strong>Software developer</strong></span>
+      </div>
+      <Image />
     </div>
+
+    <div class="content-footer d-flex flex-row gap-2">
+      <span>Read more</span>
+      <i class="bi bi-arrow-down"></i>
+    </div>
+  </div>
 </section>
 
 <style>
-    section {
-        height: 100vh;
-        color: white;
-        display: flex;
-        justify-content: center;
-    }
-    .content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
+  section {
+    height: 100vh;
+    color: white;
+  }
 
-    }
-    .titles {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        font-size: xx-large;
-        align-content: center;
-        justify-content: center;
-    }
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+  }
 
-    strong {
-        color: #609fff;
-    }
+  .titles {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  strong {
+    color: #609fff;
+  }
 </style>
