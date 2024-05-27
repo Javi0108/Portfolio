@@ -6,7 +6,7 @@ import Image from "../components/ProfileImage.astro";
   <div class="content">
     <div class="content-header d-flex flex-row gap-5">
       <div class="titles">
-        <span>Hello, I'm <strong>Javier</strong>, a</span>
+        <span><span class="hello">hello</span>, I'm <strong>Javier</strong>, a</span>
         <span><strong>Software developer</strong></span>
       </div>
       <Image />
@@ -25,13 +25,23 @@ import Image from "../components/ProfileImage.astro";
     color: white;
   }
 
+  .hello{
+    font-family: 'Borel', cursive;
+  }
+
   .content {
     height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .2fr;
+  }
+
+  .content-header {
+    margin-top: 5rem;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 10rem;
+    justify-content: center;
   }
 
   .titles {
@@ -39,11 +49,19 @@ import Image from "../components/ProfileImage.astro";
     flex-direction: column;
     flex-wrap: wrap;
     font-size: xx-large;
-    align-content: center;
+    align-items: center;
     justify-content: center;
   }
   
   strong {
     color: #609fff;
   }
+
+  .content-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
 </style>
