@@ -1,4 +1,4 @@
-<section>
+<section class="d-none d-sm-block">
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -14,16 +14,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#Experience">Experience</a>
           </li>
-          <form>
-            <li class="searchInput" id="searchInput">
-              <input type="search" placeholder="Search" aria-label="Search" />
-            </li>
-            <li>
-              <button type="button" id="searchButton" class="searchButton"
-                ><i class="bi bi-search"></i></button
-              >
-            </li>
-          </form>
           <li class="nav-item">
             <button
               type="button"
@@ -40,18 +30,6 @@
 </section>
 
 <script is:inline>
-  const button = document.getElementById("searchButton");
-  const input = document.getElementById("searchInput");
-  input.style.display = "none";
-
-  button.addEventListener("click", () => {
-    if (input.style.display == "block") {
-      input.style.display = "none";
-    } else if (input.style.display == "none") {
-      input.style.display = "block";
-    }
-  });
-
   document.getElementById('cvButton').addEventListener('click', function() {
       const url = '../../CV_English.pdf';
       const enlace = document.createElement('a');

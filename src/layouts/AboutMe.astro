@@ -1,6 +1,6 @@
 <section id="About-me">
   <h2 class="title">About me</h2>
-  <div class="content d-flex flex-row justify-content-center">
+  <div class="content d-flex flex-row">
     <span class="presentation"
       >My name is Javier García Domínguez, and I am an software developer
       passionate about creating innovative and functional solutions for
@@ -25,7 +25,7 @@
   .content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 2rem;
   }
 
@@ -33,4 +33,17 @@
     width: 50%;
     text-align: left;
   }
+
+  @media only screen and (max-width: 540px) {
+    
+  .content {
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: start;
+  }
+
+  .presentation {
+    width: 100%;
+  }
+}
 </style>
