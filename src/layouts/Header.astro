@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul
-          class="navbar-nav d-flex flex-row justify-content-center align-content-center"
+          class="navbar-nav d-flex flex-row justify-content-center align-content-center gap-2"
         >
           <li class="nav-item">
             <a class="nav-link active" href="#">Home</a>
@@ -15,13 +15,13 @@
             <a class="nav-link" href="#Experience">Experience</a>
           </li>
           <li class="nav-item">
-            <button
-              type="button"
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/10e9_h3RQAjLAh-uNVGzadAnIqRjCH2wG/view?usp=drive_link"
               id="cvButton"
-              class="cvButton nav-link mx-2" 
+              class="cvButton nav-link mx-2"
               ><i class="bi bi-file-earmark-person"></i>
-              </button
-            >
+            </a>
           </li>
         </ul>
       </div>
@@ -29,20 +29,9 @@
   </nav>
 </section>
 
-<script is:inline>
-  document.getElementById('cvButton').addEventListener('click', function() {
-      const url = 'public/CV_English.pdf';
-      const enlace = document.createElement('a');
-      enlace.href = url;
-      enlace.download = 'CV_English.pdf';
-      enlace.click();
-    });
-</script>
-
 <style>
-
   section {
-		background-color: #1f2533;
+    background-color: #1f2533;
     position: fixed;
     width: 100%;
     height: 58px;
@@ -71,7 +60,7 @@
     background-color: rgb(0, 0, 0, 0);
     color: white;
     border-color: transparent;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     /* margin-left: 10px; */
   }
 
@@ -88,7 +77,7 @@
     background-color: rgb(0, 0, 0, 0);
     color: white;
     border-color: transparent;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   #cvButton:hover {
