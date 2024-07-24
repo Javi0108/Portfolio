@@ -1,85 +1,17 @@
+---
+import ExperienceComponent from "../components/ExperienceComponent.astro"
+---
+
 <section id="Experience">
   <h3 class="title">Experience</h3>
-  <div class="content d-flex flex-row">
-    <div class="d-flex flex-row align-items-baseline gap-2">
-      <i class="bi bi-briefcase-fill" style="font-size: x-large;"></i>
-      <div class="d-flex flex-column">
-        <h5>
-          <a
-            class="d-flex flex-row align-items-baseline gap-2"
-            href="https://www.aquaesolutions.com/"
-            style="color: white; text-decoration: underline;"
-            target="_blank"
-            >Aqua E-Solutions <i
-              class="bi bi-box-arrow-up-right"
-              style="font-size: small;"></i></a
-          >
-        </h5>
-        <label>Jun 2024 - Present</label>
-        <label>Santa Cruz de Tenerife</label>
-      </div>
-    </div>
-  </div>
-  <div class="content d-flex flex-row">
-    <div class="d-flex flex-row align-items-baseline gap-2">
-      <i class="bi bi-briefcase-fill" style="font-size: x-large;"></i>
-      <div class="d-flex flex-column">
-        <h5>
-          <a
-            class="d-flex flex-row align-items-baseline gap-2"
-            href="https://eturia.co/es/"
-            style="color: white; text-decoration: underline;"
-            target="_blank"
-            >E-Turia <i
-              class="bi bi-box-arrow-up-right"
-              style="font-size: small;"></i></a
-          >
-        </h5>
-        <label>Mar 2024 - May 2024</label>
-        <label>Santa Cruz de Tenerife</label>
-        <label>Practice student</label>
-        <p>Creating a tutorial for the installation of SAP in Windows.</p>
-      </div>
-    </div>
-  </div>
-  <div class="content d-flex flex-row">
-    <div class="d-flex flex-row align-items-baseline gap-2">
-      <i class="bi bi-briefcase-fill" style="font-size: x-large;"></i>
-      <div class="d-flex flex-column">
-        <h5>
-          <a
-            class="d-flex flex-row align-items-baseline gap-2"
-            href="https://www.itop.es/"
-            target="_blank"
-            style="color: white; text-decoration: underline;"
-            >I-Top <i class="bi bi-box-arrow-up-right" style="font-size: small;"
-            ></i></a
-          >
-        </h5>
-        <label>Mar 2022 - May 2022</label>
-        <label>Santa Cruz de Tenerife</label>
-        <label>Practice student</label>
-        <p>Migrating an application to ReactJS.</p>
-      </div>
-    </div>
-  </div>
+    <ExperienceComponent businessName="Aqua E-Solutions" link="https://www.aquaesolutions.com/" date="Jun 2024 - Present" place="Santa Cruz de Tenerife" />
+    <ExperienceComponent businessName="E-Turia" link="https://eturia.co/es/" date="Mar 2024 - May 2024" place="Santa Cruz de Tenerife" />
+    <ExperienceComponent businessName="I-Top" link="https://www.itop.es/" date="Mar 2022 - May 2022" place="Santa Cruz de Tenerife" />
 </section>
 
 <style>
   section {
     margin-top: 3rem;
     color: white;
-  }
-
-  .content {
-    padding-left: 25%;
-  }
-
-  @media only screen and (max-width: 600px) {
-    .content {
-      padding-left: 5%;
-      padding-right: 5%;
-      justify-content: start;
-    }
   }
 </style>

@@ -1,0 +1,46 @@
+---
+interface Props {
+    businessName: string;
+    link: string;
+    date: string;
+    place: string;
+}
+
+const { businessName, date, place } = Astro.props;
+---
+
+<div class="content d-flex flex-row">
+    <div class="d-flex flex-row align-items-baseline gap-2">
+        <i class="bi bi-briefcase-fill" style="font-size: x-large;"></i>
+        <div class="d-flex flex-column">
+            <h5>
+                <a
+                    class="d-flex flex-row align-items-baseline gap-2"
+                    href="{link}"
+                    style="color: white; text-decoration: underline;"
+                    target="_blank"
+                    >{businessName}
+                    <i
+                        class="bi bi-box-arrow-up-right"
+                        style="font-size: small;"></i></a
+                >
+            </h5>
+            <label>{date}</label>
+            <label>{place}</label>
+        </div>
+    </div>
+</div>
+
+<style>
+    .content {
+        padding-left: 25%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .content {
+            padding-left: 5%;
+            padding-right: 5%;
+            justify-content: start;
+        }
+    }
+</style>

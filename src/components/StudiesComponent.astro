@@ -1,0 +1,36 @@
+---
+interface Props {
+    title: string;
+    finishDate: string;
+    school: string;
+    description: string;
+}
+
+const { title, finishDate, school, description } = Astro.props;
+---
+
+<div class="content d-flex flex-row">
+    <div class="d-flex flex-row align-items-baseline gap-2">
+        <i class="bi bi-mortarboard-fill" style="font-size: xx-large;"></i>
+        <div class="d-flex flex-column">
+            <h5>{title}</h5>
+            <label>{finishDate}</label>
+            <label>{school}</label>
+            <p>{description}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .content {
+        padding-left: 25%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .content {
+            padding-left: 5%;
+            padding-right: 5%;
+            justify-content: start;
+        }
+    }
+</style>
