@@ -1,0 +1,29 @@
+---
+import ProjectsComponent from "../components/ProjectsComponent.astro";
+---
+
+<section id="Projects">
+  <h3 class="title">Projects</h3>
+  <div class="row gx-0 componentes">
+    <ProjectsComponent
+      title="QuickCart"
+      description="Creador de páginas web"
+      link="https://github.com/Javi0108/QuickCart"
+      image="./assets/no-photo.jpg"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    margin-top: 3rem;
+    color: white;
+  }
+
+  .componentes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25%;
+  }
+</style>

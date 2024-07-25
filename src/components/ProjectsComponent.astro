@@ -1,0 +1,45 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    link: string;
+    image: string;
+}
+
+const { title, description, link, image } = Astro.props;
+---
+
+<div class="constaire-xxl">
+    <div
+        class="content col-4"
+        style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
+    >
+        <img src={image} class="card-img-top" width="50px" />
+        <div class="card-body">
+            <h5 class="card-title">{title}</h5>
+            <p class="card-text">
+                {description}
+            </p>
+            <a href={link} class="btn"><i class="bi bi-github"></i></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media only screen and (max-width: 600px) {
+        .content {
+            padding-left: 5%;
+            padding-right: 5%;
+            justify-content: start;
+        }
+    }
+
+    .btn {
+        background-color: #609fff;
+        color: white;
+    }
+
+    .btn:hover {
+        background-color: #0066ff;
+    }
+</style>
