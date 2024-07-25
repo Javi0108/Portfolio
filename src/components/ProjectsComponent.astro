@@ -9,12 +9,12 @@ interface Props {
 const { title, description, link, image } = Astro.props;
 ---
 
-<div class="constaire-xxl">
+<div class="constainer-xxl">
     <div
         class="content col-4"
         style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
     >
-        <img src={image} class="card-img-top" width="50px" />
+        <img src={image} width="1px" />
         <div class="card-body">
             <h5 class="card-title">{title}</h5>
             <p class="card-text">
@@ -32,6 +32,13 @@ const { title, description, link, image } = Astro.props;
             padding-right: 5%;
             justify-content: start;
         }
+    }
+
+    img {
+        border-top-left-radius: calc(.25rem - 1px);
+        border-top-right-radius: calc(.25rem - 1px);
+        vertical-align: middle;
+        width: 100%;
     }
 
     .btn {
