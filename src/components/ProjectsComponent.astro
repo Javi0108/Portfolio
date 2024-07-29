@@ -8,18 +8,22 @@ interface Props {
 
 const { title, description, link, img } = Astro.props;
 ---
-<div class="col-5 col-sm-2">
+<div class="col-5 col-sm-4">
     <div
         class="content"
         style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
     >
         <img src={img} class="d-none d-md-block" style="border-radius: 5px; width: 100%;" />
-        <div style="padding: 5px;">
-            <h5 class="fs-4">{title}</h5>
-            <p class="d-none d-md-block">
-                {description}
-            </p>
-            <a href={link} class="btn"><i class="bi bi-github"></i></a>
+        <div style="padding: 10px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: start;">
+            <div style="display: flex; flex-direction: column; flex-wrap:wrap; justify-content: center;">
+                <h5 class="fs-4">{title}</h5>
+                <label class="d-none d-md-block">
+                    {description}
+                </label>
+            </div>
+            <div style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end;">
+                <a href={link} class="btn"><i class="bi bi-github"></i></a>
+            </div>
         </div>
     </div>
 </div>
@@ -43,6 +47,7 @@ const { title, description, link, img } = Astro.props;
     .btn {
         background-color: #609fff;
         color: white;
+        font-size: larger;
     }
 
     .btn:hover {
