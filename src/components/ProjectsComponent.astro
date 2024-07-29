@@ -3,18 +3,17 @@ interface Props {
     title: string;
     description: string;
     link: string;
-    image: string;
+    img: string;
 }
 
-const { title, description, link, image } = Astro.props;
+const { title, description, link, img } = Astro.props;
 ---
-<!-- class="d-none d-md-block" -->
 <div class="col-5 col-sm-2">
     <div
         class="content"
         style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
     >
-        <img src={image} class="d-none d-md-block" style="border-radius: 5px; width: 100%;" />
+        <img src={img} class="d-none d-md-block" style="border-radius: 5px; width: 100%;" />
         <div style="padding: 5px;">
             <h5 class="fs-4">{title}</h5>
             <p class="d-none d-md-block">
