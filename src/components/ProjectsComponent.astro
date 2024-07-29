@@ -8,20 +8,29 @@ interface Props {
 
 const { title, description, link, img } = Astro.props;
 ---
-<div class="col-5 col-sm-4">
+
+<div class="col-12 col-sm-4">
     <div
         class="content"
         style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
     >
-        <img src={img} class="d-none d-md-block" style="border-radius: 5px; width: 100%;" />
-        <div style="padding: 10px; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: start;">
-            <div style="display: flex; flex-direction: column; flex-wrap:wrap; justify-content: center;">
+        <img
+            src={img}
+            class="d-none d-md-block"
+            style="border-radius: 5px; width: 100%;"
+        />
+        <div class="info">
+            <div
+                style="display: flex; flex-direction: column; flex-wrap:wrap; justify-content: center;"
+            >
                 <h5 class="fs-4">{title}</h5>
-                <label class="d-none d-md-block">
+                <label>
                     {description}
                 </label>
             </div>
-            <div style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end;">
+            <div
+                style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end;"
+            >
                 <a href={link} class="btn"><i class="bi bi-github"></i></a>
             </div>
         </div>
@@ -36,11 +45,25 @@ const { title, description, link, img } = Astro.props;
         gap: 0.5rem;
     }
 
+    .info {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: start;
+    }
+
     @media only screen and (max-width: 600px) {
         .content {
             display: flex;
             flex-direction: row;
             gap: 5px;
+        }
+
+        .info {
+            align-items: center;
+            gap: 55px;
         }
     }
 
