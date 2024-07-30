@@ -15,7 +15,8 @@ import Image from "../components/ProfileImage.astro";
     </div>
 
     <div class="content-footer d-flex flex-row gap-2">
-      <span id="about-me">Read more</span> <!-- El id del span es para los links -->
+      <span id="about-me">Read more</span>
+      <!-- El id del span es para los links -->
       <i class="bi bi-arrow-down"></i>
     </div>
   </div>
@@ -64,6 +65,19 @@ import Image from "../components/ProfileImage.astro";
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+
+  .bi-arrow-down {
+    animation: smoothbouncearrow 0.5s infinite alternate;
+  }
+
+  @keyframes smoothbouncearrow {
+    from {
+      transform: translate3d(0, -3px, 0);
+    }
+    to {
+      transform: translate3d(0, 3px, 0);
+    }
   }
 
   @media only screen and (max-width: 600px) {
