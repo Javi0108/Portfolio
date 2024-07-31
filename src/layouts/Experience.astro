@@ -4,9 +4,11 @@ import ExperienceComponent from "../components/ExperienceComponent.astro"
 
 <section>
   <h3 class="title">Experience</h3>
+  <div class="content">
     <ExperienceComponent businessName="Aqua E-Solutions" link="https://www.aquaesolutions.com/" date="Jun 2024 - Present" place="Santa Cruz de Tenerife" />
     <ExperienceComponent businessName="E-Turia" link="https://eturia.co/es/" date="Mar 2024 - May 2024" place="Santa Cruz de Tenerife" />
     <ExperienceComponent businessName="I-Top" link="https://www.itop.es/" date="Mar 2022 - May 2022" place="Santa Cruz de Tenerife" />
+  </div>
 </section>
 <div id="projects"></div>
 
@@ -15,4 +17,16 @@ import ExperienceComponent from "../components/ExperienceComponent.astro"
     margin-top: 3rem;
     color: white;
   }
+
+  .content {
+        padding-left: 25%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .content {
+            padding-left: 5%;
+            padding-right: 5%;
+            justify-content: start;
+        }
+    }
 </style>

@@ -4,12 +4,30 @@ import Icons from "../components/SkillsIcons.astro";
 
 <section>
   <h3 class="title">Skills</h3>
-  <Icons />
+  <div class="componentes">
+    <Icons />
+  </div>
 </section>
 
 <style>
   section {
     margin-top: 3rem;
     color: white;
+  }
+
+  .componentes {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 25%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .componentes {
+      padding-left: 5%;
+      padding-right: 5%;
+
+      justify-content: start;
+    }
   }
 </style>
