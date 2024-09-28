@@ -1,13 +1,12 @@
----
-import { Image } from "astro:assets";
-import profile_img from "../assets/profile_img.jpg";
----
+<script>
+    function loadScript(src: string) {
+        var script = document.createElement("script");
+        script.src = src;
+        script.type = "module";
+        document.head.appendChild(script);
+    }
 
-<div>
-    <Image
-        class={"d-none d-md-block"}
-        src={profile_img}
-        alt="Imagen de mi persona"
-        style={"margin-left: 8rem; border-radius: 50%; width: 300px; height: 300px;"}
-    />
-</div>
+    if (window.innerWidth >= 768) {
+        loadScript("/src/scripts/ThreeJsObject.js");
+    }
+</script>

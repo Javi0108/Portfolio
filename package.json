@@ -13,9 +13,12 @@
     "@astrojs/check": "^0.7.0",
     "astro": "^4.8.7",
     "jquery": "^3.7.1",
+    "three": "^0.167.0",
     "typescript": "^5.4.3"
   },
   "devDependencies": {
-    "@types/jquery": "^3.5.30"
+    "@types/jquery": "^3.5.30",
+    "@types/three": "^0.167.1",
+    "vite": "^5.3.5"
   }
 }

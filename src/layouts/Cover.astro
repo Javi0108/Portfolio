@@ -1,17 +1,17 @@
 ---
-import Image from "../components/ProfileImage.astro";
+import ProfileImage from "../components/ProfileImage.astro";
 ---
 
 <section class="d-flex flex-row justify-content-center">
   <div class="content">
-    <div class="content-header d-flex flex-row">
+    <div id="cover" class="content-header d-flex flex-row">
       <div class="titles">
         <span
           ><span class="hello">hello</span>, I'm <strong>Javier</strong>, a</span
         >
         <span><strong>Software developer</strong></span>
       </div>
-      <Image />
+      <ProfileImage />
     </div>
 
     <div class="content-footer d-flex flex-row">
@@ -45,6 +45,7 @@ import Image from "../components/ProfileImage.astro";
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 8rem;
   }
 
   .titles {
