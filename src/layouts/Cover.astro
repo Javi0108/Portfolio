@@ -34,12 +34,10 @@
   const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000);
   const renderer = new THREE.WebGLRenderer({ alpha: true });
   renderer.setSize(400, 400);
-  cover.appendChild(renderer.domElement);
+  cover?.appendChild(renderer.domElement);
 
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("self-image.jpg", (texture) => {
-    texture.alphaTest = 0.5; // Configura un valor para la transparencia, si es necesario
-  });
+  const texture = textureLoader.load("self-image.jpg");
 
   const radius = 6;
   const segments = 1000; // Cantidad de segmentos (más segmentos = más suave la circunferencia)
