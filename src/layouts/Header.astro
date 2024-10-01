@@ -3,13 +3,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul
         id="navbar-nav"
-        class="navbar-nav d-flex flex-row justify-content-center align-content-center gap-2"
+        class="navbar-nav d-flex flex-row flex-wrap justify-content-center align-content-center gap-2"
       >
         <li class="nav-item">
-          <a class="nav-link active" href="#" id="home">Home</a>
+          <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about-me">About me</a> <!-- onfocus="addActive(this.id);" onblur="removeActive(this.id);" -->
+          <a class="nav-link" href="#about-me">About me</a> 
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#experience">Experience</a>
@@ -22,7 +22,8 @@
             target="_blank"
             href="https://drive.google.com/file/d/10e9_h3RQAjLAh-uNVGzadAnIqRjCH2wG/view?usp=drive_link"
             id="cvButton"
-            class="cvButton nav-link mx-2"
+            class="cvButton nav-link"
+            rel="noopener noreferrer"
             ><i class="bi bi-file-earmark-person"></i>
           </a>
         </li>
@@ -30,6 +31,16 @@
     </div>
   </nav>
 </section>
+
+<script type="text/javascript">
+  document.querySelectorAll('.nav-link').forEach(item => {
+  item.addEventListener('click', (event) => {
+    document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+    item.classList.add('active');
+  });
+});
+
+</script>
 
 <style>
   section {
@@ -46,6 +57,7 @@
   }
 
   #cvButton {
+    font-size: large;
     border: 1px solid white;
     background-color: rgb(0, 0, 0, 0);
     color: white;
