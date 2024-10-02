@@ -21,7 +21,7 @@ const { title, description, link, img } = Astro.props;
         />
         <div class="info">
             <div
-                style="display: flex; flex-direction: column; flex-wrap:wrap; justify-content: center;"
+                style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center;"
             >
                 <h5 class="fs-4">{title}</h5>
                 <label>
@@ -49,7 +49,7 @@ const { title, description, link, img } = Astro.props;
         padding: 10px;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
         align-items: start;
     }

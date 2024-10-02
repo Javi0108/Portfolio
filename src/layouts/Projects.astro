@@ -1,14 +1,20 @@
 ---
 import ProjectsComponent from "../components/ProjectsComponent.astro";
-import quickcart_img from '../assets/projects_img/home_img.png'
+import quickcart_img from "../assets/projects_img/home_img.png";
 ---
 
 <section>
   <h3 class="title">Projects</h3>
   <div class="row gx-0 componentes">
     <ProjectsComponent
-      title="Comming Soon"
-      description="Commig Soon"
+      title="Personalized portfolio (In progress)"
+      description="Interactive portfolio website built with Astro"
+      link=""
+      img=""
+    />
+    <ProjectsComponent
+      title="ToDo Web App (Comming Soon)"
+      description="ToDo app built with ReactJs"
       link=""
       img=""
     />
@@ -29,11 +35,11 @@ import quickcart_img from '../assets/projects_img/home_img.png'
   }
 
   @media only screen and (max-width: 600px) {
-      .componentes {
-          padding-left: 5%;
-          padding-right: 5%;
+    .componentes {
+      padding-left: 5%;
+      padding-right: 5%;
 
-          justify-content: start;
-      }
+      justify-content: start;
     }
+  }
 </style>
