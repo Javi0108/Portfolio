@@ -17,39 +17,56 @@ import typescript from "../assets/icons/typescript.svg";
 
 <div>
   <h5>Front-End</h5>
-  <div class="d-flex flex-row flex-wrap gap-3" style="margin-bottom: 2rem;">
-    <img src={html.src} alt="imgn del logo de html" style={"width: 40px"} />
-    <img src={css.src} alt="imgn del logo de css" style={"width: 40px"} />
+  <div class="d-flex flex-row flex-wrap gap-2" style="margin-bottom: 2rem;">
+    <img src={html.src} alt="imgn del logo de html" title="HTML" style={"width: 45px"} />
+    <img src={css.src} alt="imgn del logo de css" title="CSS" style={"width: 45px"} />
     <img
       src={javascript.src}
       alt="imgn del logo de javascript"
-      style={"width: 40px"}
+      title="JavaScript"
+      style={"width: 45px"}
     />
     <img
       src={typescript.src}
       alt="imgn del logo de typescript"
-      style={"width: 40px"}
+      title="TypeScript"
+      style={"width: 45px"}
     />
     <img
       src={bootstrap.src}
       alt="imgn del logo de bootstrap"
-      style={"width: 40px"}
+      title="Bootstrap"
+      style={"width: 45px"}
     />
-    <img src={ionic.src} alt="imgn del logo de ionic" style={"width: 40px"} />
+    <img src={ionic.src} alt="imgn del logo de ionic" title="Ionic" style={"width: 45px"} />
     <img
       src={angular.src}
       alt="imgn del logo de angular"
-      style={"width: 40px"}
+      title="Angular"
+      style={"width: 45px"}
     />
-    <img src={react.src} alt="imgn del logo de react" style={"width: 40px"} />
+    <img src={react.src} alt="imgn del logo de react" title="React" style={"width: 45px"} />
   </div>
   <h5>Back-End</h5>
-  <div class="d-flex flex-row flex-wrap gap-3">
-    <img src={java.src} alt="imgn del logo de java" style={"width: 40px"} />
-    <img src={php.src} alt="imgn del logo de php" style={"width: 40px"} />
-    <img src={python.src} alt="imgn del logo de python" style={"width: 40px"} />
-    <img src={django.src} alt="imgn del logo de django" style={"width: 40px"} />
-    <img src={mysql.src} alt="imgn del logo de mysql" style={"width: 40px"} />
-    <img src={sqlite.src} alt="imgn del logo de sqlite" style={"width: 40px"} />
+  <div class="d-flex flex-row flex-wrap gap-2">
+    <img src={java.src} alt="imgn del logo de java" title="Java" style={"width: 45px"} />
+    <img src={php.src} alt="imgn del logo de php" title="PHP" style={"width: 45px"} />
+    <img src={python.src} alt="imgn del logo de python" title="Python" style={"width: 45px"} />
+    <img src={django.src} alt="imgn del logo de django" title="Django" style={"width: 45px"} />
+    <img src={mysql.src} alt="imgn del logo de mysql" title="MySQL" style={"width: 70px"} />
+    <img src={sqlite.src} alt="imgn del logo de sqlite" title="SQLite" style={"width: 70px"} />
   </div>
 </div>
+
+<style>
+  img {
+    padding: 0px;
+    filter: grayscale(100%);
+    transition: filter ease 0.3s;
+  }
+
+  img:hover {
+    transform: filter ease;
+    filter: grayscale(0%);
+  }
+</style>
