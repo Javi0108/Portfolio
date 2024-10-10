@@ -21,7 +21,7 @@ const { title, description, link, img } = Astro.props;
         />
         <div class="info">
             <div
-                style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center;"
+                style="display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: space-evenly; align-items: start;"
             >
                 <h5 class="fs-4">{title}</h5>
                 <label>
@@ -29,7 +29,7 @@ const { title, description, link, img } = Astro.props;
                 </label>
             </div>
             <div
-                style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end; margin-left: 5px;"
+                style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end;"
             >
                 <a target="_blank"href={link} class="btn"><i class="bi bi-github"></i></a>
             </div>
@@ -46,12 +46,12 @@ const { title, description, link, img } = Astro.props;
     }
 
     .info {
+        width: 100%;
         padding: 10px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
-        align-items: start;
     }
 
     @media only screen and (max-width: 600px) {

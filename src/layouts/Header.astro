@@ -1,5 +1,8 @@
-<section class="d-none d-sm-block">
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<section class="d-flex flex-row justify-content-center align-items-center">
+  <nav
+    class="d-none d-sm-block navbar navbar-expand-lg navbar-light"
+    id="navbar"
+  >
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul
         id="navbar-nav"
@@ -9,7 +12,7 @@
           <a class="nav-link active" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about-me">About me</a> 
+          <a class="nav-link" href="#about-me">About me</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#experience">Experience</a>
@@ -30,25 +33,42 @@
       </ul>
     </div>
   </nav>
+  <i
+    id="moon"
+    class="bi bi-moon-fill"
+    style="position: relative; margin-left: 95vw; padding-right: 3rem;"></i>
 </section>
 
 <script type="text/javascript">
-  document.querySelectorAll('.nav-link').forEach(item => {
-  item.addEventListener('click', (event) => {
-    document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
-    item.classList.add('active');
+  document.querySelectorAll(".nav-link").forEach((item) => {
+    item.addEventListener("click", (event) => {
+      document
+        .querySelectorAll(".nav-link")
+        .forEach((nav) => nav.classList.remove("active"));
+      item.classList.add("active");
+    });
   });
-});
 
+  document.getElementById("moon").addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.getElementById("navbar").classList.toggle("navbar-light");
+    document.getElementById("navbar").classList.toggle("navbar-dark");
+
+    document.getElementById("moon").classList.toggle("bi-moon-fill");
+    document.getElementById("moon").classList.toggle("bi-brightness-high-fill");
+  });
 </script>
 
 <style>
   section {
-    /* background: linear-gradient(to bottom, #333c50, #1f2533); */
-    background-color: #333c50;
+    background-color: inherit;
     position: fixed;
     width: 100%;
     height: 58px;
+  }
+
+  #navbar {
+    position: absolute;
   }
 
   .navbar-collapse {
@@ -61,12 +81,24 @@
     font-size: large;
     border: 1px solid white;
     background-color: rgb(0, 0, 0, 0);
-    color: white;
+    color: inherit;
     border-color: transparent;
     transition: all 0.3s ease;
   }
 
   #cvButton:hover {
     color: #609fff;
+  }
+
+  #moon {
+    position: relative;
+    margin-left: 95vw;
+    padding-right: 3rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    section {
+      position: absolute;
+    }
   }
 </style>
