@@ -1,6 +1,6 @@
 <section class="d-flex flex-row justify-content-center align-items-center">
   <nav
-    class="d-none d-sm-block navbar navbar-expand-lg navbar-light"
+    class="d-none d-sm-block navbar navbar-expand-lg navbar-light bg-light"
     id="navbar"
   >
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,10 +33,7 @@
       </ul>
     </div>
   </nav>
-  <i
-    id="moon"
-    class="bi bi-moon-fill"
-  ></i>
+  <i id="moon" class="bi bi-moon-fill"></i>
 </section>
 
 <script type="text/javascript">
@@ -54,6 +51,8 @@
     document.getElementById("navbar").classList.toggle("navbar-light");
     document.getElementById("navbar").classList.toggle("navbar-dark");
 
+    document.querySelector("section").classList.toggle("dark-mode-bg");
+
     document.getElementById("moon").classList.toggle("bi-moon-fill");
     document.getElementById("moon").classList.toggle("bi-brightness-high-fill");
   });
@@ -65,6 +64,14 @@
     background-color: inherit;
     width: 100%;
     height: 58px;
+  }
+
+  .dark-mode section {
+    background-color: white; /* Fondo oscuro para la barra de navegación */
+  }
+
+  .dark-mode-bg {
+    background-color: #1f2533; /* Cambia el color de fondo del section cuando está en modo oscuro */
   }
 
   #navbar {
@@ -99,7 +106,7 @@
   @media only screen and (min-width: 600px) {
     section {
       position: fixed;
+      background-color: inherit;
     }
-
   }
 </style>
