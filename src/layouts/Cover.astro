@@ -36,7 +36,7 @@
   }
 
   .content-header {
-    margin-top: 1rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -60,7 +60,7 @@
   .content-footer {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 10px;
   }
@@ -81,6 +81,13 @@
   }
 
   @media only screen and (max-width: 600px) {
+    section {
+    height: 90vh;
+  }
+    .content-header {
+    margin-top: 0rem;
+  }
+
     .content-footer {
       padding-top: 0.5rem;
       align-items: start;
