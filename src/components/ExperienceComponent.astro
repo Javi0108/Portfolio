@@ -6,7 +6,7 @@ interface Props {
     place: string;
 }
 
-const { businessName, date, place } = Astro.props;
+const { businessName,link, date, place } = Astro.props;
 ---
 
 <div class="d-flex flex-row">
@@ -16,7 +16,7 @@ const { businessName, date, place } = Astro.props;
             <h5>
                 <a
                     class="d-flex flex-row align-items-baseline gap-2"
-                    href="{link}"
+                    href={link}
                     style="color:inherit; text-decoration: none;"
                     target="_blank"
                     >{businessName}
