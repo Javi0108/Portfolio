@@ -1,5 +1,7 @@
 ---
 import ProjectsComponent from "../components/ProjectsComponent.astro";
+
+const rutaImg = "src/assets/icons/";
 ---
 
 <section>
@@ -10,12 +12,14 @@ import ProjectsComponent from "../components/ProjectsComponent.astro";
       description="E-Commerce creator (TFC)"
       link="https://github.com/Javi0108/QuickCart"
       img="/projects_imgs/quickcart_img.png"
+      tech={[rutaImg + "html.svg", rutaImg + "css.svg", rutaImg + "angular.svg", rutaImg + "typescript.svg", rutaImg + "django.svg", rutaImg + "python.svg"]}
     />
     <ProjectsComponent
     title="DoAll"
     description="ToDo app with an API REST"
     link="https://github.com/Javi0108/todo-app"
     img="/projects_imgs/ToDoApp_img.png"
+    tech={[rutaImg + "html.svg", rutaImg + "css.svg", rutaImg + "react.svg", rutaImg + "javascript.svg", rutaImg + "django.svg", rutaImg + "python.svg"]}
   />
     <!-- <ProjectsComponent
       title="Personalized portfolio (In progress)"
@@ -23,12 +27,7 @@ import ProjectsComponent from "../components/ProjectsComponent.astro";
       link=""
       img=""
     />
-    <ProjectsComponent
-      title="ToDo Web App (In progress)"
-      description="ToDo app built with ReactJs and Django"
-      link=""
-      img=""
-    /> -->
+     -->
   </div>
 </section>
 
