@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description, link, img, tech } = Astro.props;
+const rutaImg = "src/assets/icons/";
 ---
 
 <div class="col-12 col-sm-4">
@@ -34,7 +35,7 @@ const { title, description, link, img, tech } = Astro.props;
                         tech.map((imgUrl) => {
                             return (
                                 <img
-                                    src={imgUrl}
+                                    src={`${rutaImg}${imgUrl}.svg`}
                                     style="width: 30px;"
                                     alt="Tecnologia utilizada en el proyecto"
                                 />
