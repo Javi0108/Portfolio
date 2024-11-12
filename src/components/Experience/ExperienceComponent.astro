@@ -4,9 +4,10 @@ interface Props {
     link: string;
     date: string;
     place: string;
+    description: string;
 }
 
-const { businessName, link, date, place } = Astro.props;
+const { businessName, link, date, place, description } = Astro.props;
 ---
 
 <div class="d-flex flex-row">
@@ -27,6 +28,7 @@ const { businessName, link, date, place } = Astro.props;
             </h5>
             <label>{date}</label>
             <label>{place}</label>
+            <p>{description}</p>
         </div>
     </div>
 </div>
