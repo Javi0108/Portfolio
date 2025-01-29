@@ -1,20 +1,48 @@
+---
+import ThreeJsObject from "./ThreeJsObject.astro";
+---
+
 <section class="d-flex flex-row justify-content-center">
   <div class="content">
     <div id="cover" class="content-header d-flex flex-row">
-      <div class="titles">
-        <span 
-          ><span class="hello">hello</span>, I'm <strong>Javier</strong>,</span
-        >
-        <span style="text-align: center;"><strong>Web</strong> & <strong>Software</strong> developer</span>
+      <div>
+        <div class="titles">
+          <span
+            ><span class="hello">hello</span>, I'm <strong>Javier</strong
+            >,</span
+          >
+          <span style="text-align: center;"
+            ><strong>Fullstack</strong> developer</span
+          >
+        </div>
+        <div class="d-flex flex-row justify-content-center gap-4 fs-3 pt-2" id="icons">
+          <a target="_blank" href="https://github.com/Javi0108"
+            ><i class="bi bi-github"></i></a
+          >
+          <a target="_blank" href="mailto:gardojavi@gmail.com"
+            ><i class="bi bi-envelope-fill"></i></a
+          >
+          <a target="_blank" href="https://www.linkedin.com/in/javierrgd/"
+            ><i class="bi bi-linkedin"></i></a
+          >
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1KiQKVayFGT7cO2Sb4DS0XPr3wrP_x-v9/view?usp=drive_link"
+            ><i class="bi bi-file-earmark-person-fill"></i></a
+          >
+        </div>
       </div>
-      <img
+
+      <!-- <img
         id="self-image"
         src="self-image.jpg"
         alt=""
         class="d-none d-md-block rounded-circle mx-5"
         width="350px"
-      />
-      <!-- <ThreeJsObject /> -->
+      /> -->
+      <div id="object">
+        <ThreeJsObject />
+      </div>
     </div>
 
     <div class="content-footer d-flex flex-row">
@@ -69,6 +97,21 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+  }
+
+  #icons a {
+    color: inherit;
+    transition: all 0.3s ease;
+  }
+
+  #icons a:hover {
+    color: #609fff;
+  }
+
+  #object {
+    margin-left: 10rem;
+    width: 450px;
+    height: 450px;
   }
 
   .bi-arrow-down {

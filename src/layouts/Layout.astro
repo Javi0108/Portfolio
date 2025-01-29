@@ -39,8 +39,6 @@ const { title } = Astro.props;
   </body>
 </html>
 
-
-
 <style is:global>
   :root {
     --accent: 136, 58, 234;
@@ -55,46 +53,48 @@ const { title } = Astro.props;
   }
   body {
     font-family: system-ui, sans-serif;
-    background-size: 224px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(251, 251, 254);
+    background-attachment: fixed;
     color: black;
     font-family: "Onest", sans-serif;
     transition: background-color 0.4s ease;
   }
 
   .dark-mode {
-    background-color: #1f2533;
+    background: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 1) 1%,
+      rgba(31, 37, 51, 1) 99%
+    );
+    background-attachment: fixed;
+
     color: white;
   }
 
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
   }
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-  }
+
   ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: white;
+    background-color: rgba(31, 37, 51, 1);
   }
 
   .title {
-    color: #609FFF;
+    color: #609fff;
     padding-left: 25%;
     padding-bottom: 0.5rem;
     text-align: left;
   }
 
   @media only screen and (max-width: 600px) {
-  .title {
-    padding-left: 5%;
-  }
+    .title {
+      padding-left: 5%;
+    }
 
-  .content {
-    padding-left: 5%;
-    padding-right: 5%;
-    justify-content: start;
+    .content {
+      padding-left: 5%;
+      padding-right: 5%;
+      justify-content: start;
+    }
   }
-
-}
 </style>
