@@ -15,7 +15,7 @@ const { title } = Astro.props;
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <meta name="theme-color" content="" />
+    <meta name="theme-color" content="rgb(251, 251, 254)">
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -45,19 +45,11 @@ const { title } = Astro.props;
 </html>
 
 <script>
-  function rgbToHex(rgb: any) {
-    const [r, g, b] = rgb.match(/\d+/g).map(Number);
-    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase()}`;
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const backgroundColor = getComputedStyle(document.body).backgroundColor;
-    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-    if (themeColorMeta) {
-      const hexColor = rgbToHex(backgroundColor);
-      themeColorMeta.setAttribute("content", hexColor);
-    }
+  document.getElementById("moon")?.addEventListener("click", () => {
+    const backgroundColor = window.getComputedStyle(document.body).backgroundColor;
+    const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+    meta.setAttribute("content", backgroundColor);
+    console.log(meta.content)
   });
 </script>
 
@@ -73,7 +65,7 @@ const { title } = Astro.props;
       white 60%
     );
   }
-  body {
+  html, body {
     font-family: system-ui, sans-serif;
     background-color: rgb(251, 251, 254);
     background-attachment: fixed;
