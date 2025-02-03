@@ -2,6 +2,7 @@
   import * as THREE from "three";
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+  import { Reflector } from "three/examples/jsm/objects/Reflector.js";
 
   if (window.innerWidth >= 768) {
     const cover = document.getElementById("object") as HTMLDivElement;
@@ -9,13 +10,32 @@
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setSize(cover.offsetWidth, cover.offsetHeight);
     cover.appendChild(renderer.domElement);
 
-    const rectLight = new THREE.RectAreaLight(0xffffff, 2.5);
-    rectLight.position.set(0, 3, 3);
-    rectLight.lookAt(0, 0, 0);
+    const light = new THREE.DirectionalLight(0xfff000, 5);
+    light.position.set(0, 5, 3);
+    light.castShadow = true;
+
+    const rectLight = new THREE.DirectionalLight(0xffffff, 5);
+    rectLight.position.set(0, 0, 4);
+    rectLight.castShadow = true;
     scene.add(rectLight);
+
+    let isRectLightActive = true;
+    document.getElementById("moon")?.addEventListener("click", () => {
+      if (isRectLightActive) {
+        scene.remove(rectLight);
+        scene.add(light);
+
+      } else {
+        scene.remove(light);
+        scene.add(rectLight);
+      }
+      isRectLightActive = !isRectLightActive;
+    });
 
     let character: THREE.Object3D;
     let mixer: THREE.AnimationMixer;
@@ -24,8 +44,19 @@
     const loader = new GLTFLoader();
     loader.load("/models/character.glb", (glb) => {
       character = glb.scene;
+      character.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+        }
+      });
+
       scene.add(character);
-      camera.position.set(character.position.x, character.position.y + 1.5, character.position.z + 2.5);
+      camera.position.set(
+        character.position.x,
+        character.position.y + 1.5,
+        character.position.z + 2.5,
+      );
 
       mixer = new THREE.AnimationMixer(character);
       greetings = mixer.clipAction(glb.animations[16]);
@@ -33,7 +64,7 @@
       greetings.play();
       greetings.setLoop(THREE.LoopOnce, 1);
       greetings.fadeIn(0.5);
-      idle.timeScale = 0.3;
+      idle.timeScale = 0.2;
       idle.play();
 
       function playAnimation() {
@@ -51,11 +82,9 @@
 
     function animate() {
       requestAnimationFrame(animate);
-
       if (mixer) {
-        mixer.update(clock.getDelta()); // Actualizar la animación con el tiempo transcurrido
+        mixer.update(clock.getDelta());
       }
-
       renderer.render(scene, camera);
     }
 
