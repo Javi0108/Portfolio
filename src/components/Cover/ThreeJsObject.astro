@@ -20,11 +20,16 @@
 
     const rectLight = new THREE.PointLight(0xffffff, 20, 100, 1);
     rectLight.position.set(0, 1.5, 4);
+    rectLight.castShadow = true;
+    rectLight.shadow.mapSize.width = 1024;
+    rectLight.shadow.mapSize.height = 1024;
     scene.add(rectLight);
 
     const light = new THREE.PointLight(0xfcba61, 90, 100);
     light.position.set(3, 3, 4);
     light.castShadow = true;
+    light.shadow.mapSize.width = 1024;
+    light.shadow.mapSize.height = 1024;
 
     function getBackgroundColor(): THREE.Color {
       const bgColor = document.querySelector(
@@ -75,6 +80,7 @@
           child.receiveShadow = true;
         }
       });
+      character.position.y = -0.05
 
       scene.add(character);
       camera.position.set(
