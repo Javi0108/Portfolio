@@ -2,7 +2,6 @@
   import * as THREE from "three";
   import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-  import { Reflector } from "three/examples/jsm/objects/Reflector.js";
 
   if (window.innerWidth >= 768) {
     const cover = document.getElementById("object") as HTMLDivElement;
@@ -10,31 +9,57 @@
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setPixelRatio( window.devicePixelRatio );
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setSize(cover.offsetWidth, cover.offsetHeight);
     cover.appendChild(renderer.domElement);
+    renderer.domElement.style.border = "3px solid #609fff";
+    renderer.domElement.style.borderRadius = "50%";
+    renderer.domElement.style.overflow = "hidden";
 
-    const light = new THREE.DirectionalLight(0xfff000, 5);
-    light.position.set(0, 5, 3);
-    light.castShadow = true;
-
-    const rectLight = new THREE.DirectionalLight(0xffffff, 5);
-    rectLight.position.set(0, 0, 4);
-    rectLight.castShadow = true;
+    const rectLight = new THREE.PointLight(0xffffff, 20, 100, 1);
+    rectLight.position.set(0, 1.5, 4);
     scene.add(rectLight);
 
-    let isRectLightActive = true;
+    const light = new THREE.PointLight(0xfcba61, 90, 100);
+    light.position.set(3, 3, 4);
+    light.castShadow = true;
+
+    function getBackgroundColor(): THREE.Color {
+      const bgColor = document.querySelector(
+        'meta[name="theme-color"]'
+      ) as HTMLMetaElement;
+      const rgbMatch = bgColor.getAttribute("content")?.match(/\d+/g);
+      if (rgbMatch) {
+        return new THREE.Color(
+          parseInt(rgbMatch[0]) / 255,
+          parseInt(rgbMatch[1]) / 255,
+          parseInt(rgbMatch[2]) / 255
+        );
+      }
+      return new THREE.Color(0xffffff);
+    }
+
+    const plane = new THREE.PlaneGeometry(5, 5);
+    const planeMaterial = new THREE.MeshPhongMaterial();
+    const planeMesh = new THREE.Mesh(plane, planeMaterial);
+    planeMesh.rotation.x = -Math.PI / 2;
+    planeMesh.receiveShadow = true;
+    scene.add(planeMesh);
+
+    let darkModeOn = true;
     document.getElementById("moon")?.addEventListener("click", () => {
-      if (isRectLightActive) {
+      if (darkModeOn) {
+        planeMaterial.color = getBackgroundColor();
         scene.remove(rectLight);
         scene.add(light);
-
       } else {
+        planeMaterial.color = getBackgroundColor();
         scene.remove(light);
         scene.add(rectLight);
       }
-      isRectLightActive = !isRectLightActive;
+      darkModeOn = !darkModeOn;
     });
 
     let character: THREE.Object3D;
@@ -55,7 +80,7 @@
       camera.position.set(
         character.position.x,
         character.position.y + 1.5,
-        character.position.z + 2.5,
+        character.position.z + 2.5
       );
 
       mixer = new THREE.AnimationMixer(character);
@@ -78,10 +103,15 @@
       setInterval(playAnimation, 10000);
     });
 
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableRotate = false;
+    controls.enableZoom = false;
+
     const clock = new THREE.Clock();
 
     function animate() {
       requestAnimationFrame(animate);
+
       if (mixer) {
         mixer.update(clock.getDelta());
       }
