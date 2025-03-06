@@ -50,26 +50,6 @@
     camera.position.y = -window.scrollY * 0.04;
   });
 
-  if (
-    typeof DeviceOrientationEvent !== "undefined" &&
-    typeof (DeviceOrientationEvent as any).requestPermission === "function"
-  ) {
-    (DeviceOrientationEvent as any)
-      .requestPermission()
-      .then((permissionState: string) => {
-        if (permissionState === "granted") {
-          window.addEventListener("deviceorientation", (event) => {
-            camera.position.x = event.beta ?? 0;
-            camera.position.y = event.gamma ?? 0;
-            console.log(event);
-          });
-        }
-      })
-      .catch(console.error);
-  } else {
-    alert("DeviceOrientation no soported!")
-  }
-
   function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
