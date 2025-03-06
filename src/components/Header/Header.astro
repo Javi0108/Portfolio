@@ -1,43 +1,39 @@
-<section class="d-flex flex-row justify-content-center align-items-center">
-  <nav class="d-none d-sm-block navbar navbar-expand-lg" id="navbar">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul
-        id="navbar-nav"
-        class="navbar-nav d-flex flex-row flex-wrap justify-content-center align-content-center gap-2"
-      >
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about-me">About me</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a
-            target="_blank"
-            href="https://drive.google.com/file/d/1e5AMf2BqTUXGYR4E8E4X7J3RCab5Jolr/view?usp=drive_link"
-            id="cvButton"
-            class="cvButton nav-link"
-            rel="noopener noreferrer"
-            ><i class="bi bi-file-earmark-person" title="CV"></i>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<section class="d-flex flex-column justify-content-center align-items-center">
+  <ul
+    id="nav"
+    class="d-flex flex-row justify-content-center align-items-baseline gap-4 pt-3"
+  >
+    <li class="nav-item">
+      <a class="" href="#">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="" href="#about-me">About me</a>
+    </li>
+    <li class="nav-item">
+      <a class="" href="#experience">Experience</a>
+    </li>
+    <li class="nav-item">
+      <a class="" href="#projects">Projects</a>
+    </li>
+    <li class="nav-item">
+      <a
+        target="_blank"
+        href="https://drive.google.com/file/d/1e5AMf2BqTUXGYR4E8E4X7J3RCab5Jolr/view?usp=drive_link"
+        id="cvButton"
+        class="cvButton"
+        rel="noopener noreferrer"
+        ><i class="bi bi-file-earmark-person" title="CV"></i>
+      </a>
+    </li>
+  </ul>
   <i id="moon" class="bi bi-moon-fill"></i>
 </section>
 
 <script type="text/javascript">
-  document.querySelectorAll(".nav-link").forEach((item) => {
+  document.querySelectorAll(".nav-item").forEach((item) => {
     item.addEventListener("click", (event) => {
       document
-        .querySelectorAll(".nav-link")
+        .querySelectorAll(".nav-item")
         .forEach((nav) => nav.classList.remove("active"));
       item.classList.add("active");
     });
@@ -45,8 +41,8 @@
 
   document.getElementById("moon").addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
-    document.getElementById("navbar").classList.toggle("navbar-light");
-    document.getElementById("navbar").classList.toggle("navbar-dark");
+    // document.getElementById("nav").classList.toggle("navbar-light");
+    // document.getElementById("nav").classList.toggle("navbar-dark");
 
     document.querySelector("section").classList.toggle("dark-mode-bg");
 
@@ -57,26 +53,38 @@
 
 <style>
   section {
-    z-index: 1;
+    z-index: 1001;
     width: 100%;
     height: 58px;
     backdrop-filter: blur(10px);
     background-color: transparent;
+    text-decoration: none;
+    color: black;
   }
 
   .dark-mode-bg {
     backdrop-filter: blur(10px);
     background-color: transparent;
+    text-decoration: none;
+    color: white;
   }
 
-  #navbar {
-    position: absolute;
+  .dark-mode-bg #nav li a {
+    color: white;
   }
 
-  .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  #nav {
+    list-style: none;
+    text-decoration: none;
+  }
+
+  #nav li a {
+    color: black;
+    text-decoration: none;
+  }
+
+  #nav li a:hover {
+    color: #609fff;
   }
 
   #cvButton {
@@ -93,16 +101,14 @@
   }
 
   #moon {
-    position: relative;
-    margin-left: 90vw;
-    margin-right: 3rem;
+    position: fixed;
+    right: 5%;
     transition: all 0.4s ease;
   }
 
   @media only screen and (min-width: 600px) {
     section {
       position: fixed;
-      background-color: inherit;
     }
   }
 </style>

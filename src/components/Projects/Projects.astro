@@ -4,7 +4,7 @@ import ProjectsComponent from "./ProjectsComponent.astro";
 
 <section>
   <h3 class="title">Projects</h3>
-  <div class="row gx-0 componentes">
+  <div class="content">
     <ProjectsComponent
       title="QuickCart"
       description="E-Commerce creator (TFC)"
@@ -41,15 +41,16 @@ import ProjectsComponent from "./ProjectsComponent.astro";
     margin-top: 3rem;
   }
 
-  .componentes {
+  .content {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     padding-left: 25%;
   }
 
   @media only screen and (max-width: 600px) {
-    .componentes {
+    .content {
       padding-left: 5%;
       padding-right: 5%;
 

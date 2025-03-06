@@ -1,8 +1,9 @@
 ---
-import ThreeJsObject from "./ThreeJsObject.astro";
+import Character3D from "./Character3D.astro";
+import Background3D from "./Background3D.astro";
 ---
 
-<section class="d-flex flex-row justify-content-center">
+<section id="background" class="d-flex flex-row justify-content-center">
   <div class="content">
     <div id="cover" class="content-header d-flex flex-row">
       <div>
@@ -41,7 +42,7 @@ import ThreeJsObject from "./ThreeJsObject.astro";
         width="350px"
       /> -->
       <div id="object" class="d-none d-md-block">
-        <ThreeJsObject />
+        <Character3D />
       </div>
     </div>
 
@@ -67,6 +68,7 @@ import ThreeJsObject from "./ThreeJsObject.astro";
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 0.2fr;
+    z-index: 1000;
   }
 
   .content-header {

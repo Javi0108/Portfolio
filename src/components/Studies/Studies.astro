@@ -5,23 +5,30 @@ import StudiesComponent from "./StudiesComponent.astro";
 <section>
   <div></div>
   <h3 class="title">Studies</h3>
-  <StudiesComponent
-    title="Cross-Platform Application Development"
-    finishDate="May 2022"
-    school="IES Domíngo Pérez Minik, San Cristóbal de La Laguna"
-    description="Certificate of Higher Education in cross-platform application development."
-  />
-  <StudiesComponent
-    title="Web Application Development"
-    finishDate="May 2024"
-    school="IES Telesforo Bravo, Puerto de la Cruz"
-    description="Certificate of Higher Education in web application development."
-  />
+  <div class="content">
+    <StudiesComponent
+      title="Cross-Platform Application Development"
+      finishDate="May 2022"
+      school="IES Domíngo Pérez Minik, San Cristóbal de La Laguna"
+      description="Certificate of Higher Education in cross-platform application development."
+    />
+    <StudiesComponent
+      title="Web Application Development"
+      finishDate="May 2024"
+      school="IES Telesforo Bravo, Puerto de la Cruz"
+      description="Certificate of Higher Education in web application development."
+    />
+  </div>
+
   <div id="experience"></div>
 </section>
 
 <style>
   section {
     margin-top: 3rem;
+  }
+
+  .content {
+    z-index: 1000;
   }
 </style>

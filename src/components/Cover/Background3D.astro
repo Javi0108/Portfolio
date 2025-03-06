@@ -1,0 +1,51 @@
+<script>
+    import * as THREE from "three";
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, 400 / 400, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const background = document.getElementById("background") as HTMLElement;
+    background.appendChild(renderer.domElement);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(background.offsetWidth, background.offsetHeight);
+    renderer.domElement.style.position = "fixed";
+    renderer.domElement.style.top = "0";
+    renderer.domElement.style.zIndex = "1";
+    renderer.domElement.style.pointerEvents = "none"
+
+    const numOfPoints = 1000
+    const vertices = [];
+
+    for (let i = 0; i < numOfPoints; i++) {
+        const x = (Math.random() - 0.5) * 500;
+        const y = (Math.random() - 0.5) * 500;
+        const z = (Math.random()) * -500;
+        vertices.push(x, y, z);
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute(
+        "position",
+        new THREE.Float32BufferAttribute(vertices, 3),
+    );
+    const material = new THREE.PointsMaterial({
+        color: 0x609fff,
+        size: 1,
+        sizeAttenuation: true,
+        depthWrite: false,
+    });
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    let scrollY = 0;
+    window.addEventListener("scroll", () => {
+        scrollY = window.scrollY;
+    });
+
+    function animate() {
+        requestAnimationFrame(animate);
+        camera.position.y = - scrollY * 0.04;
+        renderer.render(scene, camera);
+    }
+    animate();
+</script>
