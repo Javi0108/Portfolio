@@ -17,9 +17,9 @@
     const vertices = [];
 
     for (let i = 0; i < numOfPoints; i++) {
-        const x = (Math.random() - 0.5) * 500;
-        const y = (Math.random() - 0.5) * 500;
-        const z = (Math.random()) * -500;
+        const x = (Math.random() - 0.5) * 250;
+        const y = (Math.random() - 0.5) * 250;
+        const z = (Math.random()) * -100;
         vertices.push(x, y, z);
     }
 
@@ -28,23 +28,36 @@
         "position",
         new THREE.Float32BufferAttribute(vertices, 3),
     );
+
+    const textureLoader = new THREE.TextureLoader()
+    const texture = textureLoader.load('/textures/circle_05.png');
+
     const material = new THREE.PointsMaterial({
+        alphaMap: texture,
         color: 0x609fff,
-        size: 1,
+        size: 2,
         sizeAttenuation: true,
         depthWrite: false,
+        transparent: true,
+        alphaTest: 0.001,
+        depthTest: false
     });
+
     const points = new THREE.Points(geometry, material);
     scene.add(points);
 
-    let scrollY = 0;
     window.addEventListener("scroll", () => {
-        scrollY = window.scrollY;
+        camera.position.y = - window.scrollY * 0.04;
     });
+
+    window.addEventListener("deviceorientation", (event) => {
+        camera.position.x = event.beta??0;
+        camera.position.y = event.gamma??0;
+        //console.log(event);
+    })
 
     function animate() {
         requestAnimationFrame(animate);
-        camera.position.y = - scrollY * 0.04;
         renderer.render(scene, camera);
     }
     animate();
