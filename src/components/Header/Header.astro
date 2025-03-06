@@ -1,7 +1,7 @@
-<section class="d-flex flex-column justify-content-center align-items-center">
+<section class="d-none d-md-flex flex-row justify-content-center align-items-center">
   <ul
     id="nav"
-    class="d-none d-md-flex flex-row justify-content-center align-items-baseline gap-4 pt-3"
+    class="d-flex flex-row justify-content-center align-items-baseline gap-4 pt-3"
   >
     <li class="nav-item">
       <a class="" href="#">Home</a>
@@ -26,8 +26,9 @@
       </a>
     </li>
   </ul>
-  <i id="moon" class="bi bi-moon-fill"></i>
 </section>
+<i id="moon" class="bi bi-moon-fill"></i>
+
 
 <script type="text/javascript">
   document.querySelectorAll(".nav-item").forEach((item) => {
@@ -53,6 +54,7 @@
 
 <style>
   section {
+    position: fixed;
     z-index: 1001;
     width: 100%;
     height: 58px;
@@ -102,13 +104,16 @@
 
   #moon {
     position: fixed;
+    z-index: 1001;
     right: 5%;
+    top: 2.5%;
     transition: all 0.4s ease;
   }
 
-  @media only screen and (min-width: 600px) {
-    section {
-      position: fixed;
+  @media only screen and (max-width: 600px) {
+    #moon {
+      right: 10%;
+      top: 5%;
     }
   }
 </style>
