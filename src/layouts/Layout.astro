@@ -10,7 +10,7 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Javier García's portfolio" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -65,6 +65,7 @@ const { title } = Astro.props;
       white 60%
     );
   }
+
   html, body {
     font-family: system-ui, sans-serif;
     background: radial-gradient(
@@ -76,6 +77,7 @@ const { title } = Astro.props;
     background-attachment: fixed;
     color: black;
     font-family: "Onest", sans-serif;
+    transition: background-color 0.5s;
   }
 
   .dark-mode {
@@ -87,6 +89,7 @@ const { title } = Astro.props;
     background-color: rgba(31, 37, 51);
     background-attachment: fixed;
     color: white;
+
   }
 
   ::-webkit-scrollbar {
