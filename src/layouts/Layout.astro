@@ -45,9 +45,12 @@ const { title } = Astro.props;
 </html>
 
 <script>
+  const backgroundColor = window.getComputedStyle(document.body).backgroundColor;
+  const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
+
+  meta.setAttribute("content", backgroundColor)
+  console.log(meta.content)
   document.getElementById("moon")?.addEventListener("click", () => {
-    const backgroundColor = window.getComputedStyle(document.body).backgroundColor;
-    const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement;
     meta.setAttribute("content", backgroundColor);
     console.log(meta.content)
   });
