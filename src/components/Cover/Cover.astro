@@ -12,7 +12,7 @@ import Background3D from "./Background3D.astro";
             >,</span
           >
           <span style="text-align: center;"
-            ><strong>Fullstack</strong> developer</span
+            ><strong>Frontend</strong> developer</span
           >
         </div>
         <div class="d-flex flex-row justify-content-center gap-4 fs-3 pt-2" id="icons">
@@ -45,10 +45,10 @@ import Background3D from "./Background3D.astro";
       </div>
     </div>
 
-    <div class="content-footer d-flex flex-row">
-      <span id="about-me">Read more</span>
+    <div class="content-footer d-flex flex-column justify-content-center align-items-center gap-0">
       <!-- El id del span es para los links -->
-      <i class="bi bi-arrow-down"></i>
+      <i class="bi bi-mouse2-fill"></i>
+      <i class="bi bi-caret-down-fill"></i>
     </div>
   </div>
 </section>
@@ -98,6 +98,8 @@ import Background3D from "./Background3D.astro";
     align-items: center;
     justify-content: center;
     gap: 10px;
+    color: #609fff;
+    font-size: 30px;
   }
 
   #icons a {
@@ -116,17 +118,17 @@ import Background3D from "./Background3D.astro";
     border-radius: 50%;
   }
 
-  .bi-arrow-down {
+  .bi-caret-down-fill {
     position: relative;
     animation: smoothbouncearrow 0.5s infinite alternate;
   }
 
   @keyframes smoothbouncearrow {
     from {
-      transform: translate3d(0, -3px, 0);
+      transform: translate3d(0, -5px, 0);
     }
     to {
-      transform: translate3d(0, 3px, 0);
+      transform: translate3d(0, 5px, 0);
     }
   }
 
