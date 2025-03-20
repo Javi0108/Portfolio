@@ -5,16 +5,17 @@ import ProjectsComponent from "./ProjectsComponent.astro";
 <section>
   <h3 class="title">Projects</h3>
   <div class="content">
-    <ProjectsComponent
+    <!-- <ProjectsComponent
       title="QuickCart"
       description="E-Commerce creator (TFC)"
       link="https://github.com/Javi0108/QuickCart"
       img="/projects_imgs/quickcart_img.png"
       tech={["angular", "typescript", "django", "python"]}
-    />
+    /> -->
     <ProjectsComponent
       title="DoAll"
       description="ToDo app with an API REST"
+      repo="https://github.com/Javi0108/todo-app"
       link="https://github.com/Javi0108/todo-app"
       img="/projects_imgs/ToDoApp_img.png"
       tech={["react", "javascript", "django", "python"]}
@@ -22,14 +23,16 @@ import ProjectsComponent from "./ProjectsComponent.astro";
     <ProjectsComponent
       title="Formula 1"
       description="Formula 1 app using an external API REST"
-      link="https://github.com/Javi0108/formula1-react"
+      repo="https://github.com/Javi0108/formula1-react"
+      link="https://formula1-react.vercel.app/"
       img="/projects_imgs/formula1_img.png"
-      tech={["react", "typescript"]}
+      tech={["react", "typescript", "threejs"]}
     />
     <ProjectsComponent
       title="Galaxy collision"
       description="Simulation of galaxy collision using ThreeJS"
-      link="https://github.com/Javi0108/galaxy-collision"
+      repo="https://github.com/Javi0108/galaxy-collision"
+      link="https://galaxy-collision.vercel.app/"
       img="/projects_imgs/galaxyCollision_img.png"
       tech={["vite", "javascript", "threejs"]}
     />
@@ -46,13 +49,14 @@ import ProjectsComponent from "./ProjectsComponent.astro";
 <style>
   section {
     margin-top: 3rem;
+    z-index: 1000;
   }
 
   .content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     padding-left: 25%;
   }
 

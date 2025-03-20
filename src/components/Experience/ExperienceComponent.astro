@@ -1,45 +1,42 @@
 ---
 interface Props {
-    businessName: string;
-    link: string;
-    date: string;
-    place: string;
-    description: string;
+  businessName: string;
+  link: string;
+  date: string;
+  place: string;
+  description: string;
 }
 
 const { businessName, link, date, place, description } = Astro.props;
 ---
 
 <div class="d-flex flex-row">
-    <div class="d-flex flex-row align-items-baseline gap-2">
-        <i class="bi bi-briefcase-fill" style="font-size: x-large;"></i>
-        <div class="d-flex flex-column">
-            <h5 id="businessName"
-            >
-                <a
-                    class="d-flex flex-row align-items-baseline gap-2"
-                    href={link}
-                    target="_blank"
-                    >{businessName}
-                    <i
-                        class="bi bi-box-arrow-up-right"
-                        style="font-size: small;"></i></a
-                >
-            </h5>
-            <label>{date}</label>
-            <label>{place}</label>
-            <p>{description}</p>
-        </div>
+  <div class="d-flex flex-row align-items-baseline gap-2">
+    <i class="bi bi-briefcase-fill" style="font-size: 30px;"></i>
+    <div class="d-flex flex-column">
+      <h5 id="businessName">
+        <a
+          class="d-flex flex-row align-items-baseline gap-2"
+          href={link}
+          target="_blank"
+          >{businessName}
+          <i class="bi bi-box-arrow-up-right" style="font-size: small;"></i></a
+        >
+      </h5>
+      <label>{date}</label>
+      <label>{place}</label>
+      <p>{description}</p>
     </div>
+  </div>
 </div>
 
 <style>
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-    #businessName:hover {
-        text-decoration: underline;
-    }
+  #businessName:hover {
+    text-decoration: underline;
+  }
 </style>

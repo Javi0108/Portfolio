@@ -2,10 +2,9 @@
 import Character3D from "./Character3D.astro";
 import Background3D from "./Background3D.astro";
 ---
-
 <section id="background" class="d-flex flex-row justify-content-center">
   <div class="content">
-    <div id="cover" class="content-header d-flex flex-row">
+    <div id="cover" class="content-header">
       <div>
         <div class="titles">
           <span
@@ -77,13 +76,14 @@ import Background3D from "./Background3D.astro";
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 15rem;
   }
 
   .titles {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    font-size: xx-large;
+    font-size: 35px;
     align-items: center;
     justify-content: center;
   }
@@ -110,7 +110,7 @@ import Background3D from "./Background3D.astro";
   }
 
   #object {
-    margin-left: 10rem;
+    /* margin-left: 10rem; */
     width: 450px;
     height: 450px;
     border-radius: 50%;

@@ -2,24 +2,25 @@
 interface Props {
     title: string;
     description: string;
+    repo: string;
     link: string;
     img: string;
     tech: string[];
 }
 
-const { title, description, link, img, tech } = Astro.props;
+const { title, description, repo, link, img, tech } = Astro.props;
 const rutaImg = "icons/";
 ---
 
 <div class="col-12 col-sm-4">
     <div
         class="content"
-        style="background-color: transparent; border: 1px solid #609fff; border-radius: 5px; padding: 5px;"
+        style="background-color: #60a0ff41; border: 1px solid #60a0ff41; border-radius: 5px; padding: 5px; height: 100%;"
     >
         <img
             src={img}
             class="d-none d-md-block"
-            style="border-radius: 5px; width: 100%;"
+            style="border-radius: 5px; width: 100%; aspect-ratio: 16/8;"
             alt="Imagen del proyecto"
         />
         <div class="info">
@@ -46,10 +47,13 @@ const rutaImg = "icons/";
                 </div>
             </div>
             <div
-                style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end;"
+                style="display: flex; flex-direction: column; flex-wrap:wrap; align-content: end; gap: 5px;"
             >
-                <a target="_blank" href={link} class="btn"
+                <a target="_blank" href={repo} class="btn"
                     ><i class="bi bi-github"></i></a
+                >
+                <a target="_blank" href={link} class="btn"
+                    ><i class="bi bi-globe2"></i></a
                 >
             </div>
         </div>
@@ -57,12 +61,6 @@ const rutaImg = "icons/";
 </div>
 
 <style>
-    section {
-        padding-left: 25%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
 
     .info {
         width: 100%;
