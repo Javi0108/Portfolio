@@ -14,7 +14,7 @@
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setSize(cover.offsetWidth, cover.offsetHeight);
     cover.appendChild(renderer.domElement);
-    renderer.domElement.style.border = "3px solid #609fff";
+    renderer.domElement.style.border = "2px solid #609fff";
     renderer.domElement.style.borderRadius = "50%";
     renderer.domElement.style.overflow = "hidden";
 
@@ -31,36 +31,12 @@
     light.shadow.mapSize.width = 1024;
     light.shadow.mapSize.height = 1024;
 
-    function getBackgroundColor(): THREE.Color {
-      const bgColor = document.querySelector(
-        'meta[name="theme-color"]'
-      ) as HTMLMetaElement;
-      const rgbMatch = bgColor.getAttribute("content")?.match(/\d+/g);
-      if (rgbMatch) {
-        return new THREE.Color(
-          parseInt(rgbMatch[0]) / 255,
-          parseInt(rgbMatch[1]) / 255,
-          parseInt(rgbMatch[2]) / 255
-        );
-      }
-      return new THREE.Color(0xffffff);
-    }
-
-    const plane = new THREE.PlaneGeometry(5, 5);
-    const planeMaterial = new THREE.MeshPhongMaterial();
-    const planeMesh = new THREE.Mesh(plane, planeMaterial);
-    planeMesh.rotation.x = -Math.PI / 2;
-    planeMesh.receiveShadow = true;
-    scene.add(planeMesh);
-
     let darkModeOn = true;
     document.getElementById("moon")?.addEventListener("click", () => {
       if (darkModeOn) {
-        planeMaterial.color = getBackgroundColor();
         scene.remove(rectLight);
         scene.add(light);
       } else {
-        planeMaterial.color = getBackgroundColor();
         scene.remove(light);
         scene.add(rectLight);
       }
