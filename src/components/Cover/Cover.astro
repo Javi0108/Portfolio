@@ -2,20 +2,30 @@
 import Character3D from "./Character3D.astro";
 import Background3D from "./Background3D.astro";
 ---
+
+<!-- <span class="hello">hello!</span>  -->
 <section id="background" class="d-flex flex-row justify-content-center">
   <div class="content">
     <div id="cover" class="content-header">
       <div>
         <div class="titles">
-          <span
-            ><span class="hello">hello!</span> I'm <strong>Javier</strong
-            >,</span
+          <span class="d-flex flex-row">
+            <dotlottie-wc
+              src="https://lottie.host/b76a8a88-f59d-47d8-9eb8-2789b9de0827/MpmM0kG27L.lottie"
+              style="width: fit-content;height: 50px"
+              autoplay
+              loop></dotlottie-wc>
+
+            !, I'm <strong>Javier</strong>,</span
           >
           <span style="text-align: center;"
             ><strong>Fullstack</strong> developer</span
           >
         </div>
-        <div class="d-flex flex-row justify-content-center gap-4 fs-3 pt-2" id="icons">
+        <div
+          class="d-flex flex-row justify-content-center gap-4 fs-3 pt-2"
+          id="icons"
+        >
           <a target="_blank" href="https://github.com/Javi0108"
             ><i class="bi bi-github"></i></a
           >
@@ -45,7 +55,9 @@ import Background3D from "./Background3D.astro";
       </div>
     </div>
 
-    <div class="content-footer d-flex flex-column justify-content-center align-items-center gap-0">
+    <div
+      class="content-footer d-flex flex-column justify-content-center align-items-center gap-0"
+    >
       <!-- El id del span es para los links -->
       <i class="bi bi-mouse2-fill"></i>
       <i class="bi bi-caret-down-fill" id="about-me"></i>
