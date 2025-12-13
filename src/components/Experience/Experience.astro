@@ -12,7 +12,7 @@ import ExperienceComponent from "./ExperienceComponent.astro";
       link="https://cnholistica.com/"
       date="Jul 2025 - Now"
       place="San Cristóbal de La Laguna"
-      description="I have developed an integration between Factusol and Microsoft PowerBI, reducing order preparation time by 50% and improving the speed and effectiveness of decision-making."
+      description=`● I designed and developed more intuitive internal web interfaces, improving the experience for administration users.\n● I integrated dashboards and data visualizations, facilitating real-time decision-making.\n● I automated internal processes that reduced the manual workload for staff and increased operational efficiency.\n● I optimized workflows in web panels, reducing the steps required to complete frequent tasks.`
       side="timeline-start mb-10 md:text-end"
     />
     <ExperienceComponent
@@ -20,7 +20,7 @@ import ExperienceComponent from "./ExperienceComponent.astro";
       link="https://www.aquaesolutions.com/"
       date="Jun 2024 - May 2025"
       place="Santa Cruz de Tenerife"
-      description="I developed automations in C# for the synchronisation between SAP Business One and a company's own ERP called Aqua eBs."
+      description=`● I developed integrations between SAP Business One and internal web applications, reducing errors in the user interface.\n● I developed automations that allowed operational teams to rely less on manual tasks.`
       side="timeline-end md:mb-10"
     />
     <ExperienceComponent
@@ -28,7 +28,7 @@ import ExperienceComponent from "./ExperienceComponent.astro";
       link="https://eturia.co/es/"
       date="Mar 2024 - May 2024"
       place="Santa Cruz de Tenerife"
-      description="I integrated, together with my colleagues, a customised installation process of SAP Commerce Cloud for Windows on Java SpringBoot."
+      description=`● I participated in the creation of a customised installation process of SAP Commerce Cloud for Windows on Java SpringBoot.`
       side="timeline-start mb-10 md:text-end"
     />
     <ExperienceComponent
@@ -36,40 +36,44 @@ import ExperienceComponent from "./ExperienceComponent.astro";
       link="https://www.itop.es/"
       date="Mar 2022 - May 2022"
       place="Santa Cruz de Tenerife"
-      description="I developed components in React Native, as a migration of the company's software written in Titanium was required from the beginning."
+      description=`● I developed reusable components in React Native, accelerating the development of new screens.\n● I participated in the complete migration of the software from Titanium, modernizing the frontend architecture.\n● I implemented interfaces with UX/UI best practices, improving end-user interaction.`
       side="timeline-end md:mb-10"
     />
   </ul>
 
   <div class="content">
-    <!-- <ExperienceComponent
+    <ExperienceComponent
       businessName="CN Holistica"
       link="https://cnholistica.com/"
       date="Jul 2025 - Now"
       place="San Cristóbal de La Laguna"
-      description="I have developed an integration between Factusol and Microsoft PowerBI, reducing order preparation time by 50% and improving the speed and effectiveness of decision-making."
-    /> -->
-    <!-- <ExperienceComponent
+      description=`● I designed and developed more intuitive internal web interfaces, improving the experience for administration users.\n● I integrated dashboards and data visualizations, facilitating real-time decision-making.\n● I automated internal processes that reduced the manual workload for staff and increased operational efficiency.\n● I optimized workflows in web panels, reducing the steps required to complete frequent tasks.`
+      side=""
+    />
+    <ExperienceComponent
       businessName="Aqua E-Solutions"
       link="https://www.aquaesolutions.com/"
       date="Jun 2024 - May 2025"
       place="Santa Cruz de Tenerife"
-      description="I developed automations in C# for the synchronisation between SAP Business One and a company's own ERP called Aqua eBs."
+      description=`● I developed integrations between SAP Business One and internal web applications, reducing errors in the user interface.\n● I developed automations that allowed operational teams to rely less on manual tasks.`
+      side=""
     />
     <ExperienceComponent
       businessName="E-Turia"
       link="https://eturia.co/es/"
       date="Mar 2024 - May 2024"
       place="Santa Cruz de Tenerife"
-      description="I integrated, together with my colleagues, a customised installation process of SAP Commerce Cloud for Windows on Java SpringBoot."
+      description=`● I participated in the creation of a customised installation process of SAP Commerce Cloud for Windows on Java SpringBoot.`
+      side=""
     />
     <ExperienceComponent
       businessName="I-Top"
       link="https://www.itop.es/"
       date="Mar 2022 - May 2022"
       place="Santa Cruz de Tenerife"
-      description="I developed components in React Native, as a migration of the company's software written in Titanium was required from the beginning."
-    /> -->
+      description=`● I developed reusable components in React Native, accelerating the development of new screens.\n● I participated in the complete migration of the software from Titanium, modernizing the frontend architecture.\n● I implemented interfaces with UX/UI best practices, improving end-user interaction.`
+      side=""
+    />
   </div>
 </section>
 <div id="projects"></div>
@@ -79,17 +83,30 @@ import ExperienceComponent from "./ExperienceComponent.astro";
     margin-top: 3rem;
   }
 
+  ul {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+
   .content {
+    display: none;
     padding-left: 25%;
     z-index: 1000;
   }
 
   @media only screen and (max-width: 600px) {
     .content {
+      display: block;
       padding-left: 5%;
       padding-right: 5%;
       justify-content: start;
       z-index: 1000;
+    }
+
+    ul {
+      display: none;
     }
   }
 </style>
