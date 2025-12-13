@@ -4,15 +4,52 @@ import ExperienceComponent from "./ExperienceComponent.astro";
 
 <section>
   <h3 class="title">Experience</h3>
-  <div class="content">
+  <ul
+    class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"
+  >
     <ExperienceComponent
       businessName="CN Holistica"
       link="https://cnholistica.com/"
       date="Jul 2025 - Now"
       place="San Cristóbal de La Laguna"
       description="I have developed an integration between Factusol and Microsoft PowerBI, reducing order preparation time by 50% and improving the speed and effectiveness of decision-making."
+      side="timeline-start mb-10 md:text-end"
     />
     <ExperienceComponent
+      businessName="Aqua E-Solutions"
+      link="https://www.aquaesolutions.com/"
+      date="Jun 2024 - May 2025"
+      place="Santa Cruz de Tenerife"
+      description="I developed automations in C# for the synchronisation between SAP Business One and a company's own ERP called Aqua eBs."
+      side="timeline-end md:mb-10"
+    />
+    <ExperienceComponent
+      businessName="E-Turia"
+      link="https://eturia.co/es/"
+      date="Mar 2024 - May 2024"
+      place="Santa Cruz de Tenerife"
+      description="I integrated, together with my colleagues, a customised installation process of SAP Commerce Cloud for Windows on Java SpringBoot."
+      side="timeline-start mb-10 md:text-end"
+    />
+    <ExperienceComponent
+      businessName="I-Top"
+      link="https://www.itop.es/"
+      date="Mar 2022 - May 2022"
+      place="Santa Cruz de Tenerife"
+      description="I developed components in React Native, as a migration of the company's software written in Titanium was required from the beginning."
+      side="timeline-end md:mb-10"
+    />
+  </ul>
+
+  <div class="content">
+    <!-- <ExperienceComponent
+      businessName="CN Holistica"
+      link="https://cnholistica.com/"
+      date="Jul 2025 - Now"
+      place="San Cristóbal de La Laguna"
+      description="I have developed an integration between Factusol and Microsoft PowerBI, reducing order preparation time by 50% and improving the speed and effectiveness of decision-making."
+    /> -->
+    <!-- <ExperienceComponent
       businessName="Aqua E-Solutions"
       link="https://www.aquaesolutions.com/"
       date="Jun 2024 - May 2025"
@@ -32,7 +69,7 @@ import ExperienceComponent from "./ExperienceComponent.astro";
       date="Mar 2022 - May 2022"
       place="Santa Cruz de Tenerife"
       description="I developed components in React Native, as a migration of the company's software written in Titanium was required from the beginning."
-    />
+    /> -->
   </div>
 </section>
 <div id="projects"></div>

@@ -5,32 +5,40 @@ interface Props {
   date: string;
   place: string;
   description: string;
+  side: string;
 }
 
-const { businessName, link, date, place, description } = Astro.props;
+const { businessName, link, date, place, description, side } = Astro.props;
+
 ---
 
-<div class="d-flex flex-row">
-  <div id="experience" class="d-flex flex-row align-items-baseline gap-2">
-    <div class="d-flex flex-column align-items-center">
-      <i class="bi bi-briefcase-fill" style="font-size: 25px;"></i>
-    </div>
-    <div class="d-flex flex-column">
-      <h5 id="businessName">
-        <a
-          class="d-flex flex-row align-items-center gap-2"
-          href={link}
-          target="_blank"
-          >{businessName}
-          <i class="bi bi-box-arrow-up-right" style="font-size: small;"></i></a
-        >
-      </h5>
-      <label>{date}</label>
-      <label>{place}</label>
-      <p>{description}</p>
-    </div>
+<li>
+  <div class="timeline-middle">
+    <!-- <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      class="h-5 w-5"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+        clip-rule="evenodd"></path>
+    </svg> -->
   </div>
-</div>
+  <div class={side}>
+    <time class="font-mono italic">{date}</time>
+    <div class="text-lg font-black">
+      <a href={link} target="_blank"
+        >{businessName}
+        <i class="bi bi-box-arrow-up-right" style="font-size: small;"></i></a
+      >
+    </div>
+    <div class="font-semibold mb-2">{place}</div>
+    {description}
+  </div>
+  <hr />
+</li>
 
 <style>
   #experience {
@@ -38,7 +46,7 @@ const { businessName, link, date, place, description } = Astro.props;
   }
 
   a {
-    color: inherit;
+    color: #609FFF;
     text-decoration: none;
   }
 
